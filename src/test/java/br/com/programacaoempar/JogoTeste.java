@@ -16,22 +16,36 @@ public class JogoTeste {
 
     @Test
     void testaJogo(){
-        jogo.jogada(1);
+        jogo.executaJogada(1);
         for (int i = 0; i < 19 ; i++) {
-            jogo.jogada(1);
+            jogo.executaJogada(1);
         }
         assertEquals(20, jogo.pontuacao());
     }
 
     @Test
     void testaSpare(){
-       jogo.jogada(5);
-       jogo.jogada(5);
-       jogo.jogada(5);
+       jogo.executaJogada(5);
+       jogo.executaJogada(5);
+       jogo.executaJogada(5);
         for (int i = 0; i < 17 ; i++) {
-            jogo.jogada(0);
+            jogo.executaJogada(0);
         }
-        assertEquals(24, jogo.pontuacao());
+        assertEquals(20, jogo.pontuacao());
+    }
+
+    @Test
+    void testaStrike(){
+        jogo.executaJogada(10);//26
+
+        jogo.executaJogada(10);//19
+
+        jogo.executaJogada(6);
+        jogo.executaJogada(3);//9
+        for (int i = 0; i < 14 ; i++) {
+            jogo.executaJogada(0);
+        }
+        assertEquals(54, jogo.pontuacao());
     }
 
 }
