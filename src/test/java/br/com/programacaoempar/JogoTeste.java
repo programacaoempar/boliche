@@ -20,7 +20,7 @@ public class JogoTeste {
         for (int i = 0; i < 19 ; i++) {
             jogo.executaJogada(1);
         }
-        assertEquals(20, jogo.pontuacao());
+        assertEquals(20, jogo.obtemPontuacao());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class JogoTeste {
         for (int i = 0; i < 17 ; i++) {
             jogo.executaJogada(0);
         }
-        assertEquals(20, jogo.pontuacao());
+        assertEquals(20, jogo.obtemPontuacao());
     }
 
     @Test
@@ -45,7 +45,7 @@ public class JogoTeste {
         for (int i = 0; i < 14 ; i++) {
             jogo.executaJogada(0);
         }
-        assertEquals(54, jogo.pontuacao());
+        assertEquals(54, jogo.obtemPontuacao());
     }
 
 }
